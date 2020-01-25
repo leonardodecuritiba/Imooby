@@ -1,0 +1,2 @@
+{!! Html::style('assets_admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') !!}
+{!! Html::style('assets_admin/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') !!}

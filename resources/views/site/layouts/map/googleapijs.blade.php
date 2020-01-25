@@ -1,0 +1,2 @@
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true&language=br&amp;libraries=geometry&amp;libraries=places&key={{$_PAGE_TEMPLATE_['GOOGLE_MAP_API_KEY']}}" type="text/javascript"></script>
+<script src="{{ asset('js/markerclusterer/markerclusterer.min.js') }}"></script>

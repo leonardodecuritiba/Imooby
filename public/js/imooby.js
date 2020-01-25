@@ -1,0 +1,17 @@
+var Wow=function(){"use strict";var n=function(){var n=new WOW({boxClass:"wow",offset:0,mobile:!1,tablet:!1});n.init()};return{init:function(){n()}}}();$(document).ready(function(){Wow.init()});
+$(window).load(function(){new Swiper(".swiper-clients",{slidesPerView:5,spaceBetween:50,loop:!0,breakpoints:{1024:{slidesPerView:4,spaceBetween:50},992:{slidesPerView:3,spaceBetween:40},768:{slidesPerView:3,spaceBetween:30},600:{slidesPerView:2,spaceBetween:30},480:{slidesPerView:1,spaceBetween:0}}}),new Swiper(".swiper-testimonials",{speed:1e3,autoplay:1e4,slidesPerView:1,loop:!0})});
+var MagnificPopup=function(){"use strict";var e=function(){$(document).ready(function(){$(".js_image-popup-vertical-fit").magnificPopup({type:"image",closeOnContentClick:!0,mainClass:"mfp-img-mobile",image:{verticalFit:!0}})}),$(document).ready(function(){$(".js_popup-gallery").magnificPopup({delegate:"a.js_popup-gallery-child",type:"image",mainClass:"mfp-img-mobile",gallery:{enabled:!0,navigateByImgClick:!0,preload:[0,1]},image:{tError:'<a href="%url%">The image #%curr%</a> could not be loaded.'}})}),$(document).ready(function(){$(".js_popup-multiple-image").magnificPopup({type:"image",tLoading:"Loading image #%curr%...",fixedContentPos:!0,gallery:{enabled:!0,navigateByImgClick:!0,arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',preload:[0,1]}})}),$(document).ready(function(){$(".js_popup-youtube, .js_popup-vimeo").magnificPopup({disableOn:700,type:"iframe",mainClass:"mfp-fade",removalDelay:160,preloader:!1,fixedContentPos:!0})})};return{init:function(){e()}}}();$(document).ready(function(){MagnificPopup.init()});
+var Masonry=function(){"use strict";var n=function(){var n=$(".masonry-grid");n.imagesLoaded(function(){n.masonry({itemSelector:".masonry-grid-item",columnWidth:".masonry-grid-sizer",percentPosition:!0})}),$.fn.masonryImagesReveal=function(n){var i=this.data("masonry"),r=i.options.itemSelector;return n.hide(),this.append(n),n.imagesLoaded().progress(function(n,e){var t=$(e.img).parents(r);t.show(),i.appended(t)}),this}};return{init:function(){n()}}}();$(document).ready(function(){Masonry.init()});
+"use strict";window.initMap=function(){var e=new google.maps.StyledMapType([{stylers:[{saturation:-100},{lightness:50},{visibility:"simplified"}]},{elementType:"labels",stylers:[{visibility:"on"}]},{featureType:"road",stylers:[{color:"#bbb"}]}],{name:"Dublin"}),o=new google.maps.MarkerImage("img/widgets/gmap-pin.png",new google.maps.Size(48,54),new google.maps.Point(0,0),new google.maps.Point(24,54)),t="custom_style",p={lat:41.85,lng:-73.961},s=new google.maps.Map(document.getElementById("map"),{zoom:6,scrollwheel:!1,streetViewControl:!1,mapTypeControl:!1,center:p,mapTypeControlOptions:{mapTypeIds:[google.maps.MapTypeId.ROADMAP,t]}});new google.maps.Marker({map:s,icon:o,title:"Brooklyn",position:p});s.mapTypes.set(t,e),s.setMapTypeId(t)};
+$(document).ready(function(){
+	$('[data-toggle="popover"]').popover(); 
+	var SPMaskBehavior = function (val) {
+		return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	},
+	spOptions = {
+		onKeyPress: function(val, e, field, options) {
+			field.mask(SPMaskBehavior.apply({}, arguments), options);
+		}
+	};
+	$('.sp_celphones').mask(SPMaskBehavior, spOptions);
+});
